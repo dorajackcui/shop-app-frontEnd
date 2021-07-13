@@ -4,7 +4,9 @@ const API = axios.create({
   baseURL : 'http://localhost:5000'
 })
 
-//backend url
+//backend url : https://shop-app-cui.herokuapp.com
+// http://localhost:5000
+
 
 
 export const fetchProducts = () => API.get('/products')

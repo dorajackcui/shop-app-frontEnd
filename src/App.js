@@ -12,7 +12,7 @@ import ProductScreen from './components/ProductScreen/ProductScreen'
 function App() {
   return (
     <Router >
-      <Container maxWidth='lg'>
+      <div style={{display: 'flex', justifyContent: 'center'}}>
         <Navbar />
         <Switch>
           <Route exact path="/" >
@@ -25,7 +25,7 @@ function App() {
             <Cart />
           </Route>
         </Switch>
-      </Container>
+      </div>
     </Router>
   );
 }

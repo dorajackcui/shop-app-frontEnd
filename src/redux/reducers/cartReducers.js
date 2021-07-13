@@ -4,6 +4,7 @@ const CART_INITIAL_STATE = []
 
 export const cartReducers = (cartItems = CART_INITIAL_STATE, action) => {
   switch (action.type) {
+    
     case actionTypes.ADD_TO_CART:
       const item = action.payload
       const exsitItem = cartItems.find( x => x._id === item._id )
@@ -16,11 +17,27 @@ export const cartReducers = (cartItems = CART_INITIAL_STATE, action) => {
         return [...cartItems, item]
       }
 
+    case actionTypes.UPDATE_QTY:
+      const {id, qty:newQty} = action.payload
+      const itemToChange = cartItems.find(i => i._id === id)
+      
+      if(itemToChange.qty > 1){
+        let {qty, ...rest} = itemToChange
+        
+        return cartItems.map(i => i._id === id 
+          ? ({qty:newQty, ...rest})
+          : i)
+      }else{
+        return cartItems.filter(i => i._id !== id)
+      }
+      
+
     case actionTypes.CART_RESET:
-      return cartItems
+      return CART_INITIAL_STATE
       
     case actionTypes.REMOVE_FROM_CART:
-      return cartItems
+      return cartItems.filter((x) => x._id !== action.payload)
+      
     default:
       return cartItems
   }

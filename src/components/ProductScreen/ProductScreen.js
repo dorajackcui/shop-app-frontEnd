@@ -29,9 +29,10 @@ export default function ProductScreen() {
 
   return (
     <Card className={classes.root}>
-      <CardMedia className={classes.media} image={product.imageUrl} title={product.name}/>
-      <CardContent className={classes.cardContent}>
-        <div>
+      <div className={classes.toolbar} />
+      <CardMedia className={classes.media} image={product.imageUrl} src={product.name}/>
+      <CardContent >
+        <div className={classes.cardContent}>
           <Typography variant="h5" gutterBottom>
             {product.name}
           </Typography>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card, CardMedia, CardContent, CardActions, Typography, IconButton, CardActionArea } from '@material-ui/core'
 import { AddShoppingCart } from '@material-ui/icons'
-import useStyle from '../styles'
+import useStyle from './styles'
 
 import { addToCart } from '../../../redux/actions/cartActions'
 import { useDispatch } from 'react-redux' 
@@ -18,18 +18,18 @@ export default function Product({product}) {
   return (
     <Card className={classes.root}>
       <CardActionArea component={Link} to={`/product/${product._id}`} >
-        <CardMedia className={classes.media} image={product.imageUrl} title={product.name} component="img" />
-        <CardContent className={classes.cardContent}>
-          <div>
-            <Typography variant="h5" gutterBottom>
+        <CardMedia className={classes.media} image={product.imageUrl} src={product.name} />
+        <CardContent>
+          <div className={classes.cardContent}>
+            <Typography gutterBottom variant="h5">
               {product.name}
             </Typography>
-            <Typography variant="h5">
+            <Typography gutterBottom variant="h5">
               {product.price}
-            </Typography>
+            </Typography> 
           </div>
           <Typography variant="body2" color="textSecondary">
-            {product.name}
+            {product.name} 
           </Typography>
         </CardContent>
       </CardActionArea>
