@@ -25,7 +25,7 @@ export default function Product({product}) {
               {product.name}
             </Typography>
             <Typography gutterBottom variant="h5">
-              {product.price}
+              ${product.price}
             </Typography> 
           </div>
           <Typography variant="body2" color="textSecondary">

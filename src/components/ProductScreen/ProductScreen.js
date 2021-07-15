@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { Card, CardMedia, CardContent, CardActions, Typography, IconButton, CardActionArea } from '@material-ui/core'
+import { useParams } from 'react-router-dom'
+import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core'
 import { AddShoppingCart } from '@material-ui/icons'
 import useStyle from './styles'
 
@@ -20,7 +20,7 @@ export default function ProductScreen() {
 
   useEffect(() => {
     dispatch(getProductById(id))
-  }, [dispatch])
+  }, [dispatch,id])
  
 
   const handleClick = ()=> {
@@ -30,14 +30,14 @@ export default function ProductScreen() {
   return (
     <Card className={classes.root}>
       <div className={classes.toolbar} />
-      <CardMedia className={classes.media} image={product.imageUrl} src={product.name}/>
+      <CardMedia className={classes.media} image={product.imageUrl} title={product.name} />
       <CardContent >
         <div className={classes.cardContent}>
           <Typography variant="h5" gutterBottom>
             {product.name}
           </Typography>
           <Typography variant="h5">
-            {product.price} 
+            ${product.price} 
           </Typography>
         </div>
         <Typography variant="body2" color="textSecondary">

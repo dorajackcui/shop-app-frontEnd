@@ -21,7 +21,7 @@ export const cartReducers = (cartItems = CART_INITIAL_STATE, action) => {
       const {id, qty:newQty} = action.payload
       const itemToChange = cartItems.find(i => i._id === id)
       
-      if(itemToChange.qty > 1){
+      if(newQty > 0){
         let {qty, ...rest} = itemToChange
         
         return cartItems.map(i => i._id === id 

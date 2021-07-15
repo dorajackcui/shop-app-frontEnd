@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Typography, Button, Grid } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 import CartItem from './CartItem/CartItem'
 
 import useStyle from './styles'
@@ -11,6 +12,8 @@ export default function Cart() {
   const classes = useStyle() 
   const dispatch = useDispatch()
   const cartItems = useSelector(state => state.cart)
+  
+  const subtotal = cartItems.reduce((subtotal,item) => (item.price*item.qty)+subtotal, 0)   
 
   const handleEmptyCart = () => {
     dispatch(
@@ -36,10 +39,10 @@ export default function Cart() {
         ))}
       </Grid>
       <div className={classes.cardDetails}>
-        <Typography variant="h4">Subtotal:</Typography>
+        <Typography variant="h4">Subtotal:${subtotal}</Typography>
         <div>
           <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={handleEmptyCart}>Empty cart</Button>
-          {/* <Button className={classes.checkoutButton} component={Link} to="/checkout" size="large" type="button" variant="contained" color="primary">Checkout</Button> */}
+          <Button className={classes.checkoutButton} component={Link} to="/checkout" size="large" type="button" variant="contained" color="primary">Checkout</Button>
         </div>
       </div>
     </>

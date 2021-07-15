@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { AppBar, Toolbar, IconButton, Typography, Badge, Menu, MenuItem } from '@material-ui/core'
+import { AppBar, Toolbar, IconButton, Typography, Badge } from '@material-ui/core'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import useStyle from './styles'
 import logo from '../../assets/commerce.png'
@@ -17,7 +17,7 @@ export default function Navbar() {
   <>
     <AppBar position="fixed" color="inherit" className={classes.appBar}>
       <Toolbar>
-        <Typography component={Link} to="/" variant="h6" color="inherit" className={classes.title}>
+        <Typography component={Link} to="/" variant="h5" color="inherit" className={classes.title}>
           <img src={logo} alt="MERN SHOP" height="25px" className={classes.image} />
           Mern Shop App 
         </Typography>

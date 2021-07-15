@@ -23,7 +23,7 @@ export default function CartItem ({ item }){
       <CardMedia image={item.imageUrl} alt={item.name} className={classes.media} />
       <CardContent className={classes.cardContent}>
         <Typography variant="h4">{item.name}</Typography>
-        <Typography variant="h5">{item.price}</Typography>
+        <Typography variant="h5">${item.price}</Typography>
       </CardContent>
       <CardActions className={classes.cartActions}>
         <div className={classes.buttons}>
