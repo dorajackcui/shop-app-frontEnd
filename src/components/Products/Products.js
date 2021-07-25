@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Grid } from '@material-ui/core'
+import { Grid, CircularProgress } from '@material-ui/core'
 import Product from './Product/Product'
 import useStyle from './styles'
 
@@ -19,15 +19,16 @@ export default function Products() {
   }, [dispatch])
 
   return (
-    <main className={classes.content}>
-      <div className={classes.toolbar} />
-      <Grid container justify="center" spacing={4}>
-        {products.map(product => (
-          <Grid item key={product._id} xs={12} sm={6} md={4} lg={3}>
-            <Product product={product}/>
-          </Grid>
-        ))}
-      </Grid>
-    </main>
-  )
+    !products.length ? <CircularProgress /> : (
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+        <Grid container justify="center" spacing={4}>
+          {products.map(product => (
+            <Grid item key={product._id} xs={12} sm={6} md={4} lg={3}>
+              <Product product={product}/>
+            </Grid>
+          ))}
+        </Grid>
+      </main>
+  ))
 }
