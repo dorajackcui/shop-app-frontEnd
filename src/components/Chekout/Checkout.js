@@ -13,7 +13,7 @@ export default function Checkout() {
   const classes = useStyle()
   const [activeStep, setActiveStep] = useState(0)
   
-  console.log(activeStep)
+  
   const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1)
   const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1)
   
@@ -30,7 +30,7 @@ export default function Checkout() {
   
   const Form = () => activeStep === 0 
     ? <AddressForm  onSubmit={onSubmit} />
-    : <PaymentForm />
+    : <PaymentForm backStep={backStep}/>
 
   return (
     <>

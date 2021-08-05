@@ -13,13 +13,23 @@ export default function Products() {
 
   const products = useSelector(state => state.getProducts)
   // console.log(products)
+  // products.length = 0
 
   useEffect(() => {
     dispatch(getProducts())
   }, [dispatch])
 
+  const NoProduct = () => (
+    <main className={classes.content}>
+      <div className={classes.toolbar} />
+      <CircularProgress />
+    </main>
+  )
+
+  
+
   return (
-    !products.length ? <CircularProgress /> : (
+    !products.length ? <NoProduct /> : (
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Grid container justify="center" spacing={4}>
