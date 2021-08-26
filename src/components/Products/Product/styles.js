@@ -4,19 +4,27 @@ export default makeStyles(() => ({
   root: {
     // maxWidth: 345, original width style
     maxWidth: '100%',
-    transform: "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)",
+    borderRadius:'10px',
+    transition: '0.2s',
+    '&:hover':{
+      transform :'translateY(-0.5rem)'
+    },
   },
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9,
-    '&:hover':{filter: "grayscale(90%)"},
+    
   },
   cardActions: {
     display: 'flex',
     justifyContent: 'flex-end',
   },
   cardContent: {
+    height:'75px',
     display: 'flex',
     justifyContent: 'space-between',
   },
+  cardDescription:{
+    height:'60px'
+  }
 }))

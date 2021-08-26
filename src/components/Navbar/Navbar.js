@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
   <>
-    <AppBar position="fixed" color="inherit" className={classes.appBar}>
+    <AppBar position="fixed" color="inherit" className={classes.appBar} elevation={6}>
       <Toolbar>
         <Typography component={Link} to="/" variant="h5" color="inherit" className={classes.title}>
           <img src={logo} alt="MERN SHOP" height="25px" className={classes.image} />

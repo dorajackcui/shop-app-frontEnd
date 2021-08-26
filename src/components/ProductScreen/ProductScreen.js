@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core'
+import { Card, CardMedia, CardContent, CardActions, Typography, IconButton, Slide } from '@material-ui/core'
 import { AddShoppingCart } from '@material-ui/icons'
 import useStyle from './styles'
 
@@ -28,28 +28,31 @@ export default function ProductScreen() {
   }
 
   return (
-    <Card className={classes.root}>
-      <div className={classes.toolbar} />
-      <CardMedia className={classes.media} image={product.imageUrl} title={product.name} />
-      <CardContent >
-        <div className={classes.cardContent}>
-          <Typography variant="h5" gutterBottom>
-            {product.name}
+    <Slide in direction="down">
+
+      <Card className={classes.root} elevation={6}>
+        <div className={classes.toolbar} />
+        <CardMedia className={classes.media} image={product.imageUrl} title={product.name} />
+        <CardContent >
+          <div className={classes.cardContent}>
+            <Typography variant="h5" gutterBottom>
+              {product.name}
+            </Typography>
+            <Typography variant="h5">
+              ${product.price} 
+            </Typography>
+          </div>
+          <Typography variant="body2" color="textSecondary">
+            {product.description}
           </Typography>
-          <Typography variant="h5">
-            ${product.price} 
-          </Typography>
-        </div>
-        <Typography variant="body2" color="textSecondary">
-          {product.description}
-        </Typography>
-      </CardContent>
-  
-      <CardActions disableSpacing className={classes.cardActions} >
-        <IconButton aria-label="add to cart" onClick={handleClick} >
-          <AddShoppingCart />
-        </IconButton>
-      </CardActions>
-    </Card>
+        </CardContent>
+    
+        <CardActions disableSpacing className={classes.cardActions} >
+          <IconButton aria-label="add to cart" onClick={handleClick} >
+            <AddShoppingCart />
+          </IconButton>
+        </CardActions>
+      </Card>
+    </Slide>
   )
 }
