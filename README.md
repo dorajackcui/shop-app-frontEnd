@@ -1,6 +1,7 @@
 # shop-app clone 
 
-Final app: https://shop-app-cui.netlify.app/
+**Final app: https://shop-app-cui.netlify.app/**
+
 ![project](https://i.ibb.co/8cGw8NY/Project2.png)
 
 MERN(MongoDB-Express-React-Node.js) project Based on https://youtu.be/377AQ0y6LPA and https://youtu.be/0divhP3pEsg, for learning purposes. 
