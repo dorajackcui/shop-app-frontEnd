@@ -1,10 +1,14 @@
-# shop-app clone 
+## MERN E-Commerce App
 
-**Final app: https://shop-app-cui.netlify.app/**
+This project is based on [this](https://youtu.be/377AQ0y6LPA) and [this](https://youtu.be/0divhP3pEsg) MERN Stack tutorial, for learning purposes. 
+
+### 💫  [Final App](https://shop-app-cui.netlify.app/)
 
 ![project](https://i.ibb.co/8cGw8NY/Project2.png)
 
-MERN(MongoDB-Express-React-Node.js) project Based on https://youtu.be/377AQ0y6LPA and https://youtu.be/0divhP3pEsg, for learning purposes. 
+## MERN Stack
+
+* MongoDB-Express-React-Node.js
 * Frontend: React + Redux + Material UI
 * Backend: MongoDB Atlas + Express + Node 
 -> [Backend Source Code](https://github.com/dorajackcui/shop-app-backEnd)
